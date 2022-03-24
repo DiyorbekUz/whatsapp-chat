@@ -2,9 +2,9 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const PORT = process.env.PORT || 5000
-let users = JSON.parse(fs.readFileSync('../database/users.json', 'utf-8'))
-let messages = JSON.parse(fs.readFileSync('../database/messages.json', 'utf-8'))
-let writeUsers = JSON.parse(fs.readFileSync('../database/writeUsers.json', 'utf-8'))
+let users = JSON.parse(fs.readFileSync(path.join(__dirname, '../', '/database','users.json'), 'utf-8'))
+let messages = JSON.parse(fs.readFileSync(path.join(__dirname, '../', 'database','messages.json'), 'utf-8'))
+let writeUsers = JSON.parse(fs.readFileSync(path.join(__dirname, '../', 'database','writeUsers.json'), 'utf-8'))
 const url = require('url')
 const usersController = require('./controllers/usersController');
 const staticFilesController = require('./controllers/staticFilesController');
@@ -28,31 +28,31 @@ http.createServer(async function (req, res) {
     }
 
     if (req.url === "/whatsapp") {
-        let buf = fs.readFileSync('../chat/whatsapp.html')
+        let buf = fs.readFileSync(path.join(__dirname, "../",'/chat', '/whatsapp.html'))
         res.end(buf)
         return
     }
 
     if (req.url === "/adduser" && req.method == 'POST') {
         await usersController.addUser(req, res, users)
-        fs.writeFileSync('../database/users.json', JSON.stringify(users))
+        fs.writeFileSync(path.join(__dirname, "../",'/database', '/users.json'), JSON.stringify(users))
         res.end(JSON.stringify(users))
     }
 
     if (req.url === "/sendmessage" && req.method == 'POST') {
         await usersController.sendmessages(req, res, messages)
-        fs.writeFileSync('../database/messages.json', JSON.stringify(messages))
+        fs.writeFileSync(path.join(__dirname, "../",'/database', '/messages.json'), JSON.stringify(messages))
         res.end(JSON.stringify(messages))
     }
 
     if (req.url === "/addwriteusers" && req.method == 'POST') {
         await usersController.writeUsers(req, res, writeUsers)
-        fs.writeFileSync('../database/writeUsers.json', JSON.stringify(writeUsers))
+        fs.writeFileSync(path.join(__dirname, "../",'/database', '/writeUsers.json'), JSON.stringify(writeUsers))
         res.end(JSON.stringify(writeUsers))
     }
 
     if (req.url === "/" && req.method == 'GET') {
-        fs.readFile("../public/index.html", function (err, html) {
+        fs.readFile(path.join(__dirname, "../", "/public", "/index.html"), function (err, html) {
             res.writeHead(200, { "Content-Type": "text/html" });
             res.end(html);
         });

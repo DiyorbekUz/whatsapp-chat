@@ -1,0 +1,20 @@
+{
+  "name": "whatsapp-chat",
+  "version": "1.0.1",
+  "description": "Simple whatsapp application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/back-end/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DiyorbekUz/whatsapp-chat.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DiyorbekUz/whatsapp-chat/issues"
+  },
+  "homepage": "https://github.com/DiyorbekUz/whatsapp-chat#readme"
+}

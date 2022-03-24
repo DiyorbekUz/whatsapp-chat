@@ -103,7 +103,6 @@ class Chat {
         fromUsername = fromUsername.trim()
         toUsername = toUsername.trim()
         comment = comment.trim()
-        console.log(fromUsername, toUsername);
         let whoUser = `${fromUsername}-${toUsername}`
         let api = await fetch('http://192.168.1.67:5000/sendmessage', {
                 method: 'POST',
@@ -143,7 +142,6 @@ class Chat {
                 })
             })
         json1 = await json1.json()
-        console.log(json1);
         }
     }
 
