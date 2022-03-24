@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<title>Register-Login Page</title>
+	<link rel="stylesheet" type="text/css" href="./style.css">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
+				<form>
+					<label for="chk" aria-hidden="true">Sign up</label>
+					<h4 id="reg"></h4>
+					<input class="username-signup" type="text" placeholder="User name" required="">
+					<input class="age" type="number" min="1" placeholder="Age" oninput="validity.valid||(value='');" required="">
+					<select id="gender">
+						<option value="male">Male</option>
+						<option value="female">Female</option>
+					</select>
+					<input class="password-signup" type="password" placeholder="Password" required="">
+					<button class="sign-up">Sign up</button>
+				</form>
+			</div>
+
+			<div class="login">
+				<form>
+					<label for="chk" aria-hidden="true">Login</label>
+					<h4 id="log"></h4>
+					<input class="username-signin" type="username" placeholder="Username" required="">
+					<input class="password-signin" type="password" placeholder="Password" required="">
+					<button class="sign-in">Login</button>
+				</form>
+			</div>
+	</div>
+</body>
+<script src="./index.js"></script>
+</html>
