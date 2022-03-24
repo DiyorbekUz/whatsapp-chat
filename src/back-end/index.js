@@ -84,5 +84,5 @@ http.createServer(async function (req, res) {
                 res.end(html);
             });
 }).listen(PORT, () => {
-    console.log(`Running ${PORT} http://localhost:${PORT}`)
+    console.log(`Running ${PORT} http://https://whatsapp-chatt.herokuapp.com/:${PORT}`)
 });

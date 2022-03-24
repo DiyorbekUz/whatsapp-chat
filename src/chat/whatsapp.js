@@ -15,7 +15,7 @@ class Chat {
 
     async usersFunc(){
         try{
-            const api = await fetch('http://192.168.1.67:5000/users')
+            const api = await fetch('http://https://whatsapp-chatt.herokuapp.com/users')
             const json = await api.json()
             return Promise.resolve(json)
         }catch(error){
@@ -25,7 +25,7 @@ class Chat {
 
     async getMessages(){
         try{
-            const api = await fetch('http://192.168.1.67:5000/messages')
+            const api = await fetch('http://https://whatsapp-chatt.herokuapp.com/messages')
             const json = await api.json()
             return Promise.resolve(json)
         }catch(error){
@@ -35,7 +35,7 @@ class Chat {
 
     async getWriteUsers(){
         try{
-            const api = await fetch('http://192.168.1.67:5000/writeusers')
+            const api = await fetch('http://https://whatsapp-chatt.herokuapp.com/writeusers')
             const json = await api.json()
             return Promise.resolve(json)
         }catch(error){
@@ -104,7 +104,7 @@ class Chat {
         toUsername = toUsername.trim()
         comment = comment.trim()
         let whoUser = `${fromUsername}-${toUsername}`
-        let api = await fetch('http://192.168.1.67:5000/sendmessage', {
+        let api = await fetch('http://https://whatsapp-chatt.herokuapp.com/sendmessage', {
                 method: 'POST',
                 body: JSON.stringify({
                     who: whoUser,
@@ -120,7 +120,7 @@ class Chat {
     }
 
     async headingUsers(who, username, photo_url, date){
-        let api = await fetch('http://192.168.1.67:5000/addwriteusers', {
+        let api = await fetch('http://https://whatsapp-chatt.herokuapp.com/addwriteusers', {
                 method: 'POST',
                 body: JSON.stringify({
                     who: who,
@@ -132,7 +132,7 @@ class Chat {
         api = await api.json()
 
         if (api) {
-            let json1 = await fetch('http://192.168.1.67:5000/addwriteusers', {
+            let json1 = await fetch('http://https://whatsapp-chatt.herokuapp.com/addwriteusers', {
                 method: 'POST',
                 body: JSON.stringify({
                     who: username,

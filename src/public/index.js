@@ -9,7 +9,7 @@ let signin = document.querySelector('.sign-in')
 
 async function usersFunc(){
     try{
-        let api = await fetch('http://192.168.1.67:5000/users')
+        let api = await fetch('https://whatsapp-chatt.herokuapp.com//users')
         api = await api.json()
         return api
     }catch(error){
@@ -92,7 +92,7 @@ signup.onclick = async function (event) {
     }else{
         try{
             let photo = gender.value == 'male' ? 'https://www.bootdey.com/img/Content/avatar/avatar4.png' : 'https://www.bootdey.com/img/Content/avatar/avatar3.png'
-            let api = await fetch('http://192.168.1.67:5000/adduser', {
+            let api = await fetch('https://whatsapp-chatt.herokuapp.com//adduser', {
                 method: 'POST',
                 body: JSON.stringify({
                     username: usernameup.value,
