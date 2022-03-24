@@ -50,7 +50,7 @@ const writing = (username, photo_url) => {
   <span class="heading-online">Online</span>
 </div>
 <div class="col-sm-1 col-xs-1  heading-dot pull-right">
-          <i class="glyphicon glyphicon-trash  pull-right" aria-hidden="true"></i>
+          <!-- <i class="glyphicon glyphicon-trash  pull-right" aria-hidden="true"></i> -->
         </div>`
 }
 
